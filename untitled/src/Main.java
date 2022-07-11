@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         productManager productManagers = new productManager();
         Scanner scanner = new Scanner(System.in);
-        productManagers.readFileProductList();
+
         int choice;
         do {
             System.out.println("************* Menu *************");
@@ -32,11 +32,32 @@ public class Main {
                 case 4:
                     productManagers.deleteProduct();
                     break;
+                case 5:
+                    System.out.println("1. Sắp xếp sản phẩm theo giá tăng dần.");
+                    System.out.println("2. Sắp xếp sản phẩm theo giá giảm dần.");
+                    System.out.println("3. Thoát.");
+                    int choiceSort = Integer.parseInt(scanner.nextLine());
+                    switch (choiceSort) {
+                        case 1:
+                            productManagers.sortByIncrementalPrice();
+                            break;
+                        case 2:
+                            productManagers.sortByDescendPrice();
+                            break;
+                        case 3:
+                            break;
+                    }
+                    break;
+                case 6:
+                    productManagers.searchMaxPrice();
+                    break;
                 case 7:
-                    productManagers.writeFileProduct("FileProduct.csv");
+                    productManagers.readFileProductList();
                     break;
                 case 8:
-                    productManagers.readFileProductList();
+                    productManagers.writeFileProduct("FileProduct.csv");
+                    break;
+                case 9:
                     break;
             }
 

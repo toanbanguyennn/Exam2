@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,9 +43,11 @@ public class productManager {
         for (Product pr : productArrayList) {
             if (pr.getId().equals(a)) {
                 System.out.println("Bạn có chắc chắn muốn xoá sản phẩm");
+                System.out.println("Nhập kí tự bất kì để thoát!");
                 String k = scanner.nextLine();
                 if(k.equals("Y")){
-                productArrayList.remove(pr);}
+                productArrayList.remove(pr);
+                System.out.println("Xóa sản phẩm thành công!");}
                 break;
 
             } else {
@@ -114,5 +117,37 @@ public class productManager {
             System.out.println(e.getMessage());
         }
         return productArrayList;
+    } public ArrayList<Product> sortByIncrementalPrice() {
+        Collections.sort(productArrayList);
+        return productArrayList;
+    }
+
+    public ArrayList<Product> sortByDescendPrice() {
+        ArrayList<Product> newProducts = sortByIncrementalPrice();
+        Collections.reverse(newProducts);
+        return newProducts;
+    }
+
+    public Product searchById(String id) {
+        for (Product product : productArrayList) {
+            if (product.getId().equals(id)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    public Product searchMaxPrice() {
+        ArrayList<Product> productArrayList = sortByIncrementalPrice();
+        return productArrayList.get((productArrayList.size() - 1));
+    }
+
+    public boolean checkID(String id) {
+        for (Product product : productArrayList) {
+            if (product.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

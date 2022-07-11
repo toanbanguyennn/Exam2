@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Product implements Serializable {
+public class Product implements Comparable<Product> {
     public  String id;
     public String name;
     public double price;
@@ -67,5 +67,10 @@ public class Product implements Serializable {
                 ", number=" + number +
                 ", describe='" + describe + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product product) {
+        return (int) (this.price - product.getPrice());
     }
 }
