@@ -128,26 +128,12 @@ public class productManager {
         return newProducts;
     }
 
-    public Product searchById(String id) {
-        for (Product product : productArrayList) {
-            if (product.getId().equals(id)) {
-                return product;
-            }
-        }
-        return null;
-    }
 
-    public Product searchMaxPrice() {
+
+    public void  searchMaxPrice() {
         ArrayList<Product> productArrayList = sortByIncrementalPrice();
-        return productArrayList.get((productArrayList.size() - 1));
+        System.out.println( productArrayList.get((productArrayList.size() - 1)));
     }
 
-    public boolean checkID(String id) {
-        for (Product product : productArrayList) {
-            if (product.getId().equals(id)) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }

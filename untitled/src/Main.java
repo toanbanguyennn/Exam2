@@ -58,6 +58,7 @@ public class Main {
                     productManagers.writeFileProduct("FileProduct.csv");
                     break;
                 case 9:
+                    System.exit(9);
                     break;
             }
 
