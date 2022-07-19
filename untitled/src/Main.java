@@ -33,8 +33,8 @@ public class Main {
                     productManagers.deleteProduct();
                     break;
                 case 5:
-                    System.out.println("1. Sắp xếp sản phẩm theo giá tăng dần.");
-                    System.out.println("2. Sắp xếp sản phẩm theo giá giảm dần.");
+                    System.out.println("1. Sắp xếp  tăng dần :");
+                    System.out.println("2. Sắp xếp  giảm dần :");
                     System.out.println("3. Thoát.");
                     int choiceSort = Integer.parseInt(scanner.nextLine());
                     switch (choiceSort) {

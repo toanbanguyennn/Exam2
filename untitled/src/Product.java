@@ -7,9 +7,6 @@ public class Product implements Comparable<Product> {
     public int number;
     public String describe;
 
-    public Product() {
-    }
-
     public String getId() {
         return id;
     }
